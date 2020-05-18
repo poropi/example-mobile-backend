@@ -294,6 +294,197 @@ post '/confirm_payment_intent' do
   return generate_payment_response(payment_intent)
 end
 
+post '/api/v1/users/login/' do
+  status 200
+  return {
+    :id => 123
+  }.to_json
+end
+
+post '/api/v1/users/' do
+  status 200
+  return {
+    :user => {
+      :id => 123,
+      :created_at => '2020-01-01 00:00:00'
+    }
+  }.to_json
+end
+
+get '/api/v1/users/:id/' do
+  status 200
+  return {
+    :user => {
+      :id => 123,
+      :email => 'test@example.com',
+      :type => 0,
+      :firstname => '太郎',
+      :lastname => '山田',
+      :zipcode => '12345',
+      :prefecture => '東京都',
+      :address1 => '千代田区',
+      :address2 => '1',
+      :phone => '0123456789',
+      :sex => '0',
+      :birthday => '1975-01-01',
+      :nationality => 'Japan',
+      :language => 'ja'
+    }
+  }.to_json
+end
+
+post '/api/v1/users/:id/' do
+  status 200
+  return {
+    :user => {
+      :id => 123,
+      :updated_at => '2020-01-01 00:00:00'
+    }
+  }.to_json
+end
+
+get '/api/v1/users/:id/application/' do
+  status 200
+  return {
+    :user => {
+      :id => "Honda事業者練習用APP",
+      :created_at => '2020-01-01 00:00:00'
+    }
+  }.to_json
+end
+
+delete '/api/v1/users/:id/' do
+  status 200
+  return {
+    :user => {
+      :id => 123,
+      :deleted_at => '2020-01-01 00:00:00'
+    }
+  }.to_json
+end
+
+post '/api/v1/users/change_password/' do
+  status 200
+  return {
+    :message => 'パスワード変更URLを記載したメールを送信しました'
+  }.to_json
+end
+
+get '/api/v1/products/' do
+  status 200
+  return {
+    :products => [
+      {
+        :id => 023,
+        :type => 'good',
+        :name => '商品A',
+        :price => 1000,
+        :img_url => 'https://bike-lineage.org/etc/bike-trivia/img/wing.jpg',
+        :plan_id => 456
+      },
+      {
+        :id => 123,
+        :type => 'good',
+        :name => '商品B',
+        :price => 1000,
+        :img_url => 'https://images-fe.ssl-images-amazon.com/images/I/41PzbGFqZ5L._SL500_AC_SS350_.jpg',
+        :plan_id => 456
+      },
+      {
+        :id => 223,
+        :type => 'good',
+        :name => '商品C',
+        :price => 1000,
+        :img_url => 'https://www.honda.co.jp/top-page/common/img/pickup/honda.jpg',
+        :plan_id => 456
+      },
+      {
+        :id => 323,
+        :type => 'good',
+        :name => '商品D',
+        :price => 1000,
+        :img_url => 'https://cdn.pixabay.com/photo/2016/08/15/18/18/honda-1596081_960_720.png',
+        :plan_id => 456
+      },
+      {
+        :id => 423,
+        :type => 'good',
+        :name => '商品E',
+        :price => 1000,
+        :img_url => 'https://www.honda.co.jp/top-page/common/img/pickup/honda.jpg',
+        :plan_id => 456
+      }
+    ]
+  }.to_json
+end
+
+post '/api/v1/products/buy/' do
+  status 200
+  return {
+    :message => 'OK'
+  }.to_json
+end
+
+get '/api/v1/users/:user_id/billing_statements/:billing_statement_id' do
+  status 200
+  return {
+    :message => 'OK'
+  }.to_json
+end
+
+get '/api/v1/users/:user_id/billing_statements/' do
+  status 200
+  return {
+    :billing_statements => [
+      {
+        :user_name => '山田太郎',
+        :application_name => 'Honda事業者練習用APP',
+        :stripe_charge_id => 'ch_1Ga0iRAoeVIvTbzQ2r0V9B7y',
+        :amount => 1000,
+        :application_fee_amount => 100,
+        :billing_confirmed_at => '2020-03-01 00:00:00',
+        :billing_created_at => '2020-03-01 00:00:00'
+      },
+      {
+        :user_name => '山田太郎',
+        :application_name => 'Honda事業者練習用APP',
+        :stripe_charge_id => 'ch_1Ga0iRAoeVIvTbzQ2r0V9B7y',
+        :amount => 2000,
+        :application_fee_amount => 200,
+        :billing_confirmed_at => '2020-02-01 00:00:00',
+        :billing_created_at => '2020-02-01 00:00:00'
+      },
+      {
+        :user_name => '山田太郎',
+        :application_name => 'Honda事業者練習用APP',
+        :stripe_charge_id => 'ch_1Ga0iRAoeVIvTbzQ2r0V9B7y',
+        :amount => 3000,
+        :application_fee_amount => 300,
+        :billing_confirmed_at => '2020-01-01 00:00:00',
+        :billing_created_at => '2020-01-01 00:00:00'
+      },
+      {
+        :user_name => '山田太郎',
+        :application_name => 'Honda事業者練習用APP',
+        :stripe_charge_id => 'ch_1Ga0iRAoeVIvTbzQ2r0V9B7y',
+        :amount => 4000,
+        :application_fee_amount => 400,
+        :billing_confirmed_at => '2019-12-01 00:00:00',
+        :billing_created_at => '2019-12-01 00:00:00'
+      },
+      {
+        :user_name => '山田太郎',
+        :application_name => 'Honda事業者練習用APP',
+        :stripe_charge_id => 'ch_1Ga0iRAoeVIvTbzQ2r0V9B7y',
+        :amount => 5000,
+        :application_fee_amount => 500,
+        :billing_confirmed_at => '2019-11-01 00:00:00',
+        :billing_created_at => '2019-11-01 00:00:00'
+      }
+    ]
+  }.to_json
+end
+
 def generate_payment_response(payment_intent)
   # Note that if your API version is before 2019-02-11, 'requires_action'
   # appears as 'requires_source_action'.
