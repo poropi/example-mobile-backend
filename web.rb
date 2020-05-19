@@ -36,9 +36,7 @@ post '/api/v1/users/:user_id/ephemeral_keys' do
 
   content_type :json
   status 200
-  return {
-    :ephemeral_key => key
-  }.to_json
+  key.to_json
 end
 
 def authenticate!
