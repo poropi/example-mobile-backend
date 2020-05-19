@@ -22,7 +22,7 @@ get '/' do
   return log_info("Great, your backend is set up. Now you can configure the Stripe example apps to point here.")
 end
 
-post '/ephemeral_keys' do
+post '/api/v1/users/:user_id/ephemeral_keys' do
   authenticate!
   begin
     key = Stripe::EphemeralKey.create(
@@ -36,7 +36,9 @@ post '/ephemeral_keys' do
 
   content_type :json
   status 200
-  key.to_json
+  return {
+    :ephemeral_key => key
+  }.to_json
 end
 
 def authenticate!
