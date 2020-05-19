@@ -418,7 +418,7 @@ get '/api/v1/products/' do
   }.to_json
 end
 
-post '/api/v1/products/buy/' do
+post '/api/v1/users/:user_id/products/buy/' do
   status 200
   return {
     :message => 'OK'
