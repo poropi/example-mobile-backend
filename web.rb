@@ -347,7 +347,7 @@ get '/api/v1/users/:id/application/' do
   status 200
   return {
     :user => {
-      :id => "Honda事業者練習用APP",
+      :application_name => "Honda事業者練習用APP",
       :created_at => '2020-01-01 00:00:00'
     }
   }.to_json
@@ -425,10 +425,177 @@ post '/api/v1/users/:user_id/products/buy/' do
   }.to_json
 end
 
-get '/api/v1/users/:user_id/billing_statements/:billing_statement_id' do
+get '/api/v1/users/:user_id/billing_statements/details' do
   status 200
   return {
-    :message => 'OK'
+    :billing_statements => [
+      {
+        :user_name => '山田太郎',
+        :application_name => 'Honda事業者練習用APP',
+        :stripe_charge_id => 'ch_1Ga0iRAoeVIvTbzQ2r0V9B7y'
+        :amount => 1000,
+        :application_fee_amount => 100,
+        :billing_confirmed_at => '2020-03-01 00:00:00',
+        :billing_created_at => '2020-03-01 00:00:00',
+        :product => [
+          {
+            :id => 123,
+            :type => "good",
+            :stripe_id => 'prod_H1WegHpQ4Tbeil',
+            :name => '商品A'
+            :price => 1000,
+            :img_url => 'https://example.com/img/001.jpg',
+            :stripe_sku_id => 'sku_H5fp2wm48knJmM',
+          },
+          {
+            :id => 456,
+            :type => "service",
+            :stripe_id => 'plan_GrJZWcAfaDTsW',
+            :name => '月額プランA'
+            :price => 3000,
+            :interval => 'month'
+            :interval_count => 1,
+            :usage_type => 'licensed'
+          },
+          {
+            :id => 789,
+            :type => "good",
+            :stripe_id => 'prod_H1WegHpQ4Tbeil',
+            :name => '商品B'
+            :price => 1000,
+            :img_url => 'https://example.com/img/001.jpg',
+            :stripe_sku_id => 'sku_H5fp2wm48knJmM',
+          },
+          {
+            :id => 012,
+            :type => "service",
+            :stripe_id => 'plan_GrJZWcAfaDTsW',
+            :name => '月額プランB'
+            :price => 3000,
+            :interval => 'month'
+            :interval_count => 1,
+            :usage_type => 'licensed'
+          },
+          {
+            :id => 345,
+            :type => "good",
+            :stripe_id => 'prod_H1WegHpQ4Tbeil',
+            :name => '商品C'
+            :price => 1000,
+            :img_url => 'https://example.com/img/001.jpg',
+            :stripe_sku_id => 'sku_H5fp2wm48knJmM',
+          },
+          {
+            :id => 678,
+            :type => "service",
+            :stripe_id => 'plan_GrJZWcAfaDTsW',
+            :name => '月額プランC'
+            :price => 3000,
+            :interval => 'month'
+            :interval_count => 1,
+            :usage_type => 'licensed'
+          }
+        ],
+        :card => {
+          :id => 'card_1GXtviAoeVIvTbzQnuBabh3V',
+          :brand: 'VISA',
+          :last4 => '4242',
+          :exp_month => '',
+          :exp_year => '',
+          :name => '',
+          :address_city => '',
+          :address_country => '',
+          :address_line1 => '',
+          :address_line2 => '',
+          :address_state => '',
+          :address_zip => '',
+          :fingerprint => ''
+        }
+      },
+      {
+        :user_name => '山田次郎',
+        :application_name => 'Honda事業者練習用APP',
+        :stripe_charge_id => 'ch_1Ga0iRAoeVIvTbzQ2r0V9B7y'
+        :amount => 10000,
+        :application_fee_amount => 1000,
+        :billing_confirmed_at => '2020-03-03 00:00:00',
+        :billing_created_at => '2020-03-03 00:00:00',
+        :product => [
+          {
+            :id => 1230,
+            :type => "good",
+            :stripe_id => 'prod_H1WegHpQ4Tbeil',
+            :name => '商品D'
+            :price => 10000,
+            :img_url => 'https://example.com/img/001.jpg',
+            :stripe_sku_id => 'sku_H5fp2wm48knJmM',
+          },
+          {
+            :id => 4560,
+            :type => "service",
+            :stripe_id => 'plan_GrJZWcAfaDTsW',
+            :name => '月額プランD'
+            :price => 30000,
+            :interval => 'month'
+            :interval_count => 1,
+            :usage_type => 'licensed'
+          },
+          {
+            :id => 7890,
+            :type => "good",
+            :stripe_id => 'prod_H1WegHpQ4Tbeil',
+            :name => '商品E'
+            :price => 10000,
+            :img_url => 'https://example.com/img/001.jpg',
+            :stripe_sku_id => 'sku_H5fp2wm48knJmM',
+          },
+          {
+            :id => 0120,
+            :type => "service",
+            :stripe_id => 'plan_GrJZWcAfaDTsW',
+            :name => '月額プランE'
+            :price => 30000,
+            :interval => 'month'
+            :interval_count => 1,
+            :usage_type => 'licensed'
+          },
+          {
+            :id => 3450,
+            :type => "good",
+            :stripe_id => 'prod_H1WegHpQ4Tbeil',
+            :name => '商品F'
+            :price => 10000,
+            :img_url => 'https://example.com/img/001.jpg',
+            :stripe_sku_id => 'sku_H5fp2wm48knJmM',
+          },
+          {
+            :id => 6780,
+            :type => "service",
+            :stripe_id => 'plan_GrJZWcAfaDTsW',
+            :name => '月額プランF'
+            :price => 30000,
+            :interval => 'month'
+            :interval_count => 1,
+            :usage_type => 'licensed'
+          }
+        ],
+        :card => {
+          :id => 'card_1GXtviAoeVIvTbzQnuBabh3V',
+          :brand: 'Master',
+          :last4 => '4242',
+          :exp_month => '',
+          :exp_year => '',
+          :name => '',
+          :address_city => '',
+          :address_country => '',
+          :address_line1 => '',
+          :address_line2 => '',
+          :address_state => '',
+          :address_zip => '',
+          :fingerprint => ''
+        }
+      },
+    ]
   }.to_json
 end
 
@@ -439,7 +606,6 @@ get '/api/v1/users/:user_id/billing_statements/' do
       {
         :user_name => '山田太郎',
         :application_name => 'Honda事業者練習用APP',
-        :stripe_charge_id => 'ch_1Ga0iRAoeVIvTbzQ2r0V9B7y',
         :amount => 1000,
         :application_fee_amount => 100,
         :billing_confirmed_at => '2020-03-01 00:00:00',
@@ -448,7 +614,6 @@ get '/api/v1/users/:user_id/billing_statements/' do
       {
         :user_name => '山田太郎',
         :application_name => 'Honda事業者練習用APP',
-        :stripe_charge_id => 'ch_1Ga0iRAoeVIvTbzQ2r0V9B7y',
         :amount => 2000,
         :application_fee_amount => 200,
         :billing_confirmed_at => '2020-02-01 00:00:00',
@@ -457,7 +622,6 @@ get '/api/v1/users/:user_id/billing_statements/' do
       {
         :user_name => '山田太郎',
         :application_name => 'Honda事業者練習用APP',
-        :stripe_charge_id => 'ch_1Ga0iRAoeVIvTbzQ2r0V9B7y',
         :amount => 3000,
         :application_fee_amount => 300,
         :billing_confirmed_at => '2020-01-01 00:00:00',
@@ -466,7 +630,6 @@ get '/api/v1/users/:user_id/billing_statements/' do
       {
         :user_name => '山田太郎',
         :application_name => 'Honda事業者練習用APP',
-        :stripe_charge_id => 'ch_1Ga0iRAoeVIvTbzQ2r0V9B7y',
         :amount => 4000,
         :application_fee_amount => 400,
         :billing_confirmed_at => '2019-12-01 00:00:00',
@@ -475,7 +638,6 @@ get '/api/v1/users/:user_id/billing_statements/' do
       {
         :user_name => '山田太郎',
         :application_name => 'Honda事業者練習用APP',
-        :stripe_charge_id => 'ch_1Ga0iRAoeVIvTbzQ2r0V9B7y',
         :amount => 5000,
         :application_fee_amount => 500,
         :billing_confirmed_at => '2019-11-01 00:00:00',
