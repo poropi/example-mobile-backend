@@ -425,7 +425,7 @@ post '/api/v1/users/:user_id/products/buy/' do
   }.to_json
 end
 
-get '/api/v1/users/:user_id/billing_statements/details' do
+post '/api/v1/users/:user_id/billing_statements/details' do
   status 200
   return {
     :billing_statements => [
