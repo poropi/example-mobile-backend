@@ -442,7 +442,7 @@ post '/api/v1/users/:user_id/billing_statements/details' do
             :type => "good",
             :name => '商品A',
             :price => 1000,
-            :img_url => 'https://example.com/img/001.jpg',
+            :img_url => 'https://bike-lineage.org/etc/bike-trivia/img/wing.jpg',
           },
           {
             :id => 456,
@@ -458,7 +458,7 @@ post '/api/v1/users/:user_id/billing_statements/details' do
             :type => "good",
             :name => '商品B',
             :price => 1000,
-            :img_url => 'https://example.com/img/001.jpg',
+            :img_url => 'https://images-fe.ssl-images-amazon.com/images/I/41PzbGFqZ5L._SL500_AC_SS350_.jpg',
           },
           {
             :id => 012,
@@ -474,7 +474,7 @@ post '/api/v1/users/:user_id/billing_statements/details' do
             :type => "good",
             :name => '商品C',
             :price => 1000,
-            :img_url => 'https://example.com/img/001.jpg',
+            :img_url => 'https://www.honda.co.jp/top-page/common/img/pickup/honda.jpg',
           },
           {
             :id => 678,
@@ -516,7 +516,7 @@ post '/api/v1/users/:user_id/billing_statements/details' do
             :type => "good",
             :name => '商品D',
             :price => 10000,
-            :img_url => 'https://example.com/img/001.jpg',
+            :img_url => 'https://bike-lineage.org/etc/bike-trivia/img/wing.jpg',
           },
           {
             :id => 4560,
@@ -532,7 +532,7 @@ post '/api/v1/users/:user_id/billing_statements/details' do
             :type => "good",
             :name => '商品E',
             :price => 10000,
-            :img_url => 'https://example.com/img/001.jpg',
+            :img_url => 'https://images-fe.ssl-images-amazon.com/images/I/41PzbGFqZ5L._SL500_AC_SS350_.jpg',
           },
           {
             :id => 0120,
@@ -548,7 +548,7 @@ post '/api/v1/users/:user_id/billing_statements/details' do
             :type => "good",
             :name => '商品F',
             :price => 10000,
-            :img_url => 'https://example.com/img/001.jpg',
+            :img_url => 'https://www.honda.co.jp/top-page/common/img/pickup/honda.jpg',
           },
           {
             :id => 6780,
