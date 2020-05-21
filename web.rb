@@ -432,7 +432,6 @@ post '/api/v1/users/:user_id/billing_statements/details' do
       {
         :user_name => '山田太郎',
         :application_name => 'Honda事業者練習用APP',
-        :stripe_charge_id => 'ch_1Ga0iRAoeVIvTbzQ2r0V9B7y',
         :amount => 1000,
         :application_fee_amount => 100,
         :billing_confirmed_at => '2020-03-01 00:00:00',
@@ -444,7 +443,6 @@ post '/api/v1/users/:user_id/billing_statements/details' do
             :name => '商品A',
             :price => 1000,
             :img_url => 'https://example.com/img/001.jpg',
-            :stripe_sku_id => 'sku_H5fp2wm48knJmM',
           },
           {
             :id => 456,
@@ -461,7 +459,6 @@ post '/api/v1/users/:user_id/billing_statements/details' do
             :name => '商品B',
             :price => 1000,
             :img_url => 'https://example.com/img/001.jpg',
-            :stripe_sku_id => 'sku_H5fp2wm48knJmM',
           },
           {
             :id => 012,
@@ -478,7 +475,6 @@ post '/api/v1/users/:user_id/billing_statements/details' do
             :name => '商品C',
             :price => 1000,
             :img_url => 'https://example.com/img/001.jpg',
-            :stripe_sku_id => 'sku_H5fp2wm48knJmM',
           },
           {
             :id => 678,
@@ -521,7 +517,6 @@ post '/api/v1/users/:user_id/billing_statements/details' do
             :name => '商品D',
             :price => 10000,
             :img_url => 'https://example.com/img/001.jpg',
-            :stripe_sku_id => 'sku_H5fp2wm48knJmM',
           },
           {
             :id => 4560,
@@ -538,7 +533,6 @@ post '/api/v1/users/:user_id/billing_statements/details' do
             :name => '商品E',
             :price => 10000,
             :img_url => 'https://example.com/img/001.jpg',
-            :stripe_sku_id => 'sku_H5fp2wm48knJmM',
           },
           {
             :id => 0120,
@@ -555,7 +549,6 @@ post '/api/v1/users/:user_id/billing_statements/details' do
             :name => '商品F',
             :price => 10000,
             :img_url => 'https://example.com/img/001.jpg',
-            :stripe_sku_id => 'sku_H5fp2wm48knJmM',
           },
           {
             :id => 6780,
