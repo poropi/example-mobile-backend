@@ -311,6 +311,13 @@ post '/api/v1/users/' do
   }.to_json
 end
 
+post '/api/v1/users/change_password/' do
+  status 200
+  return {
+    :message => 'パスワード変更URLを記載したメールを送信しました'
+  }.to_json
+end
+
 get '/api/v1/users/:id/' do
   status 200
   return {
@@ -360,13 +367,6 @@ delete '/api/v1/users/:id/' do
       :id => 123,
       :deleted_at => '2020-01-01 00:00:00'
     }
-  }.to_json
-end
-
-post '/api/v1/users/change_password/' do
-  status 200
-  return {
-    :message => 'パスワード変更URLを記載したメールを送信しました'
   }.to_json
 end
 
