@@ -436,7 +436,7 @@ post '/api/v1/users/:user_id/billing_statements/details' do
         :application_fee_amount => 100,
         :billing_confirmed_at => '2020-03-01 00:00:00',
         :billing_created_at => '2020-03-01 00:00:00',
-        :product => [
+        :products => [
           {
             :id => 123,
             :type => "good",
