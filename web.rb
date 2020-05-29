@@ -453,6 +453,79 @@ post '/api/v1/users/:user_id/billing_statements/details' do
             :interval_count => 1,
             :usage_type => 'licensed'
           },
+        ],
+        :card => {
+          :id => 'card_1GXtviAoeVIvTbzQnuBabh3V',
+          :brand => 'VISA',
+          :last4 => '4242',
+          :exp_month => 12,
+          :exp_year => 2021,
+          :name => '',
+          :address_city => '',
+          :address_country => '',
+          :address_line1 => '',
+          :address_line2 => '',
+          :address_state => '',
+          :address_zip => '',
+          :fingerprint => ''
+        }
+      },
+      {
+        :user_name => '山田太郎',
+        :application_name => 'Honda事業者練習用APP',
+        :amount => 1000,
+        :application_fee_amount => 100,
+        :billing_confirmed_at => '2020-03-02 00:00:00',
+        :billing_created_at => '2020-03-02 00:00:00',
+        :products => [
+          {
+            :id => 123,
+            :type => "good",
+            :name => '商品A',
+            :price => 1000,
+            :img_url => 'https://bike-lineage.org/etc/bike-trivia/img/wing.jpg',
+          },
+        ],
+        :card => {
+          :id => 'card_1GXtviAoeVIvTbzQnuBabh3V',
+          :brand => 'VISA',
+          :last4 => '4242',
+          :exp_month => 12,
+          :exp_year => 2021,
+          :name => '',
+          :address_city => '',
+          :address_country => '',
+          :address_line1 => '',
+          :address_line2 => '',
+          :address_state => '',
+          :address_zip => '',
+          :fingerprint => ''
+        }
+      },
+      {
+        :user_name => '山田太郎',
+        :application_name => 'Honda事業者練習用APP',
+        :amount => 1000,
+        :application_fee_amount => 100,
+        :billing_confirmed_at => '2020-03-03 00:00:00',
+        :billing_created_at => '2020-03-03 00:00:00',
+        :products => [
+          {
+            :id => 123,
+            :type => "good",
+            :name => '商品A',
+            :price => 1000,
+            :img_url => 'https://bike-lineage.org/etc/bike-trivia/img/wing.jpg',
+          },
+          {
+            :id => 456,
+            :type => "service",
+            :name => '月額プランA',
+            :price => 3000,
+            :interval => 'month',
+            :interval_count => 1,
+            :usage_type => 'licensed'
+          },
           {
             :id => 789,
             :type => "good",
@@ -508,8 +581,8 @@ post '/api/v1/users/:user_id/billing_statements/details' do
         :stripe_charge_id => 'ch_1Ga0iRAoeVIvTbzQ2r0V9B7y',
         :amount => 10000,
         :application_fee_amount => 1000,
-        :billing_confirmed_at => '2020-03-03 00:00:00',
-        :billing_created_at => '2020-03-03 00:00:00',
+        :billing_confirmed_at => '2020-03-04 00:00:00',
+        :billing_created_at => '2020-03-04 00:00:00',
         :products => [
           {
             :id => 1230,
